@@ -13,9 +13,35 @@ div.apps{
     
 }
 div.activeComputer{
-    padding:10px;
-    
+    padding: 10px;
+    margin: 0 auto;
+    text-align:center;
 }
 
 div.inactive{
 }
+
+ul.apps{
+    line-height: normal; 
+    display: inline-block;
+}
+
+li {
+    width: 20%;
+    min-height: 50px;
+    border: 1px solid #000;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    zoom: 1;
+    padding: 5px;
+    *display: inline;
+    background: #00FF00;
+    word-wrap: break-word;
+}
+
+li#stop{
+    background: #FF0000;
+}
+

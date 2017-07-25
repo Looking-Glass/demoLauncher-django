@@ -14,12 +14,22 @@ from datetime import datetime, timedelta
 from django.views.decorators.csrf import csrf_exempt 
 from computer.models import Computer
 import sys
+#import HttpRequest
+from django.urls import reverse
 
 def home(request):
     time_threshhold = datetime.now() - timedelta(minutes=1) #get all computers w/pings in the last minute as 'active' computers
     activeComputers=Computer.objects.filter(lastUpdated__gt=time_threshhold)
     inactiveComputers=Computer.objects.filter(lastUpdated__lt=time_threshhold)
     return render(request, "launcher/home.html", {"activeComputers": activeComputers, "inactiveComputers" : inactiveComputers})
+
+def computer(request, computerName="null"):
+    actionURL=request.build_absolute_uri(reverse('action'))
+    try:
+        computer=Computer.objects.get(name=computerName)
+    except Computer.DoesNotExist:
+        computer=null
+    return render(request, "launcher/computer.html", {"computer":computer, "actionURL":actionURL})
 
 @csrf_exempt
 def action(request):
