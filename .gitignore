@@ -3,6 +3,8 @@ settings.py
 ### Emacs ###
 # -*- mode: gitignore; -*-
 *~
+*.py~
+*.pyc
 \#*\#
 /.emacs.desktop
 /.emacs.desktop.lock
