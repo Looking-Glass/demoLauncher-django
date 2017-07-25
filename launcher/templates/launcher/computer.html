@@ -2,12 +2,14 @@
 {% block head %}
 <script type="text/javascript">
 function startApp(computerName, appName){
-    $.post("{{ actionURL }}", { computer:computerName, action: 'run', app:appName } ,function(data){
+$.post("{{ actionURL }}", { computer:computerName, action: 'run', app:appName } ,function(data){
+location.reload();
         });
 }
 
 function stopPrograms(computer, app){
     $.post("{{ actionURL }}", { computer:computer, action: 'stop', app:app} ,function(data){
+location.reload();
         });
 }
 

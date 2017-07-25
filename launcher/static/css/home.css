@@ -41,6 +41,10 @@ li {
     word-wrap: break-word;
 }
 
+li.selected{
+    background: #FFFF00;
+}
+
 li#stop{
     background: #FF0000;
 }

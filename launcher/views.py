@@ -39,6 +39,7 @@ def action(request):
     app=request.POST.get("app")    
     computer=Computer.objects.get(name=name)
     computer.action="%s,%s" % (action,app)
+    computer.runningApp=app
     computer.save()
     return HttpResponse(computer.action)
 
