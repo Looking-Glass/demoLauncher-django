@@ -1,0 +1,21 @@
+span.app {
+    padding: 5px;
+    background: #00FF00;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+div.computerName{
+}
+
+div.apps{
+    padding:10px;
+    
+}
+div.activeComputer{
+    padding:10px;
+    
+}
+
+div.inactive{
+}

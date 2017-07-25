@@ -1,0 +1,1 @@
+/home/japhy/launcher/launcher/static/js/launcher.js

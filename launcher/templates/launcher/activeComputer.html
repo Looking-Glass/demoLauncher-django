@@ -1,0 +1,6 @@
+<div class="activeComputer">
+{{ computer.name }}<br/>
+{% for app in computer.listApps %}
+<a href="launch" class="app"><span class="app">app</span></a>
+{% endfor %}
+</div>

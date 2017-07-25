@@ -1,0 +1,7 @@
+function startApp(computer, app){
+    console.log(computer+" "+app);
+        $.post("action/", { computer:computer, app:app } ,function(data){
+	    $("#"+computer+".*").removeClass("selected");
+	    $("#"+computer+"."+app).addClass("selected");
+        });
+}

@@ -1,0 +1,25 @@
+{% extends "launcher/base.html" %}
+{% block content %}
+
+Active computers
+<div class="active">
+{% for computer in activeComputers %}
+   <div class="activeComputer">
+   {{ computer.name }}<br/>
+   <div class="apps" id="{{ computer }}">
+    {% for app in computer.listApps %}
+    <span id="{{ computer }}.{{ app }}" class={% if app == computer.runningApp %} "selected" {% else %} "app" {% endif %}
+	  onclick="startApp('{{ computer.name }}', '{{ app }}');"> {{ app }} </span>
+    {% endfor %}
+    <span class="app stop {% if computer.runningApp == "" %} selected {% endif %}" onclick="startApp('{{ computer.name }}', 'stop');"> stop </span>
+   </div>
+    </div>
+{% endfor %}
+</div>
+
+Inactive computers
+<div class="inactive">
+{% for computer in inactiveComputers %}
+{{ computer }} </br>
+{% endfor %}</div>
+{% endblock %}
